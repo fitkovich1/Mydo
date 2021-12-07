@@ -19,6 +19,7 @@ const Navbar = () => {
     const onHandleLinkClick = (linkName) => {
         if (authToken && linkName === "login") {
             dispatch(logOut());
+            localStorage.removeItem('token');
         }
     };
 

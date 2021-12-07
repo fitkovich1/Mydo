@@ -4,16 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsShowMessage } from "../../redux/actions";
 
 const InfoMessage = () => {
-
     const dispatch = useDispatch();
-    const infoMessage = useSelector(state => state.message);
+    const infoMessage = useSelector((state) => state.message);
 
     useEffect(() => {
-
-        const timeOutId = setTimeout( () => dispatch(setIsShowMessage(false)), 3000);
+        const timeOutId = setTimeout(() => dispatch(setIsShowMessage(false)), 3000);
 
         return () => clearTimeout(timeOutId);
-
     }, [dispatch]);
 
     return (

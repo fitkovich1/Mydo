@@ -5,10 +5,9 @@ export const LoginForm = styled.form`
   height: max-content;
   padding: 0 30px;
   margin-bottom: 20px;
-  
-  @media (max-width: 500px){
+
+  @media (max-width: 500px) {
     width: 100%;
-    
   }
 `;
 
@@ -18,13 +17,13 @@ export const LoginFormButton = styled.button`
   border: 1px solid #ffd543;
   border-radius: 5px;
   cursor: pointer;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #595959;
   background-color: transparent;
-  transition: all .5s linear;
-  
-  &:active{
+  transition: all 0.5s linear;
+
+  &:active {
     position: relative;
     top: 2px;
   }

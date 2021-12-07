@@ -1,12 +1,17 @@
 import { put, takeEvery } from "redux-saga/effects";
-import { LOG_IN_USER, loginUserFailure, loginUserSuccess, setIsShowMessage } from "../actions";
-
+import {
+    ActionTypes,
+    loginUserFailure,
+    loginUserSuccess,
+    setIsShowMessage,
+} from "../actions";
 
 function* logInUserWorker(action) {
     try {
         const res = yield action.logInMutation({ variables: action.payload });
         const authToken = res.data.logIn.access_token;
         yield put(loginUserSuccess(authToken, "user is logged in"));
+        localStorage.setItem('token', authToken);
         yield put(setIsShowMessage(true));
     } catch (error) {
         yield put(loginUserFailure(error.message));
@@ -16,5 +21,5 @@ function* logInUserWorker(action) {
 }
 
 export function* logInUserWatcher() {
-    yield takeEvery(LOG_IN_USER, logInUserWorker);
+    yield takeEvery(ActionTypes.LOG_IN_USER, logInUserWorker);
 }

@@ -1,32 +1,28 @@
 import Navbar from "../Navbar";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AppContainer } from "./styles";
 import { MAIN_ROUTES, routes } from "../helper";
 import InfoMessage from "../InfoMessage";
 import { useSelector } from "react-redux";
 
-
 const App = () => {
-
-    const isShowMessage = useSelector(state => state.isShowMessage);
+    const isShowMessage = useSelector((state) => state.isShowMessage);
 
     return (
         <AppContainer>
-            <Switch>
-                {routes.map((route) => {
-                    return <Route key={route.path}
-                                  path={route.path}
-                                  component={route.component}
-                    />
+            <Routes>
+                {Object.entries(routes).map(([route, Component]) => {
+                    return <Route key={route} path={route} element={Component} />;
                 })}
-                <Route path={MAIN_ROUTES.BASE}
-                       render={() => <Redirect to={MAIN_ROUTES.SHOP}/>}
+                <Route
+                    path={MAIN_ROUTES.BASE}
+                    element={<Navigate replace to={MAIN_ROUTES.SHOP} />}
                 />
-            </Switch>
-            <Navbar/>
+            </Routes>
+            <Navbar />
             {isShowMessage && <InfoMessage />}
         </AppContainer>
     );
-}
+};
 
 export default App;

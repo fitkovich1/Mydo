@@ -44,7 +44,7 @@ export const FormInputField = styled.input`
 `;
 
 export const FormInputFieldError = styled.p`
-    font-size: .9rem;
-    color: red;
-    margin: 3px 0 0 7px;
+  font-size: 0.9rem;
+  color: red;
+  margin: 3px 0 0 7px;
 `;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const NavbarContainer = styled.nav`
   width: 100%;
   height: 100px;
-  border-top: 1px solid #E7E7E7;
+  border-top: 1px solid #e7e7e7;
   padding: 15px 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -19,19 +19,20 @@ const NavbarItemLink = styled(Link)`
   left: 50%;
   cursor: pointer;
   border-radius: 50%;
-  position: ${props => props.absolute ? "absolute" : "static"};
-  transform: ${props => props.absolute ? "translateX(-50%)" : "translateX(0)"};
-  font-weight: ${props => props.active ? "600" : "400"};
+  position: ${(props) => (props.absolute ? "absolute" : "static")};
+  transform: ${(props) =>
+          props.absolute ? "translateX(-50%)" : "translateX(0)"};
+  font-weight: ${(props) => (props.active ? "600" : "400")};
   text-decoration: none;
 
   &:before {
-    display: ${props => props.absolute ? "block" : "none"};
-    box-shadow: ${props => props.absolute ? "0px 5px 20px #C4C4C4" : "0"};
-    background-color: ${props => props.active ? "#ffd543" : "#C4C4C4"};
+    display: ${(props) => (props.absolute ? "block" : "none")};
+    box-shadow: ${(props) => (props.absolute ? "0px 5px 20px #C4C4C4" : "0")};
+    background-color: ${(props) => (props.active ? "#ffd543" : "#C4C4C4")};
     content: "";
     width: 66px;
     height: 33px;
-    opacity: .5;
+    opacity: 0.5;
     top: 25px;
     left: 50%;
     transform: translateX(-50%);
@@ -52,7 +53,7 @@ const NavbarItemName = styled.p`
   line-height: 1;
   font-size: 1rem;
   color: #000;
-  &:first-letter{
+  &:first-letter {
     text-transform: uppercase;
   }
 `;
@@ -61,5 +62,5 @@ export const Nav = {
     NavbarContainer,
     NavbarItemLink,
     NavbarItem,
-    NavbarItemName
-}
+    NavbarItemName,
+};

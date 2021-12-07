@@ -1,49 +1,48 @@
+import { ActionTypes } from "../actions";
+
 const initialState = {
     isShowMessage: false,
     isUserLoginLoading: false,
-    authToken: '',
-    message: ''
-}
+    authToken: localStorage.getItem("token") || "",
+    message: "",
+};
 
 export const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'LOG_IN_USER': {
+        case ActionTypes.LOG_IN_USER: {
             return {
                 ...state,
-                isUserLoginLoading: true
-            }
+                isUserLoginLoading: true,
+            };
         }
-        case "LOG_IN_USER_SUCCESS": {
+        case ActionTypes.LOG_IN_USER_SUCCESS: {
             return {
                 ...state,
                 authToken: action.authToken,
                 message: action.successMessage,
-                isUserLoginLoading: false
-            }
+                isUserLoginLoading: false,
+            };
         }
-        case "LOG_IN_USER_FAILURE": {
+        case ActionTypes.LOG_IN_USER_FAILURE: {
             return {
                 ...state,
                 isUserLoginLoading: false,
-                message: action.error
-            }
+                message: action.error,
+            };
         }
-        case "SET_IS_SHOW_MESSAGE": {
+        case ActionTypes.SET_IS_SHOW_MESSAGE: {
             return {
                 ...state,
-                isShowMessage: action.isShowMessage
-            }
+                isShowMessage: action.isShowMessage,
+            };
         }
-        case "LOG_OUT": {
+        case ActionTypes.LOG_OUT: {
             return {
                 ...state,
-                authToken: ''
-            }
+                authToken: "",
+            };
         }
         default:
             return state;
     }
-}
-
-
-
+};

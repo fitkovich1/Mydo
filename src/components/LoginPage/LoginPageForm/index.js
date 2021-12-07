@@ -16,14 +16,14 @@ const LoginPageForm = () => {
     const dispatch = useDispatch();
 
     const onSubmit = (values) => {
-        const payload = {
-            User: {
-                username: values.email,
-                password: values.password
-            }
-        }
-        dispatch(loginUser(logInMutation, payload));
-    }
+        dispatch( loginUser(logInMutation, {
+                User: {
+                    username: values.email,
+                    password: values.password
+                }
+            })
+        );
+    };
 
     const initialValues = {
         email: '',

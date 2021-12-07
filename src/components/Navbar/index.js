@@ -14,8 +14,7 @@ const Navbar = () => {
     const [activeNavLink, setActiveNavLink] = useState("shop");
 
     useEffect(() => {
-        let activeNavLinkStr = location.pathname.replaceAll("/","");
-        setActiveNavLink(activeNavLinkStr);
+        setActiveNavLink(location.pathname.replaceAll("/",""));
     }, [location.pathname]);
 
     return (

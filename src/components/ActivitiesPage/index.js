@@ -1,11 +1,12 @@
+import { ActivitiesPageContainer } from "./styles";
 
+const ActivitiesPage = () => {
 
-const Activities = () => {
     return (
-        <div>
-
-        </div>
+        <ActivitiesPageContainer>
+            <p>Activities page</p>
+        </ActivitiesPageContainer>
     );
 };
 
-export default Activities;
+export default ActivitiesPage;

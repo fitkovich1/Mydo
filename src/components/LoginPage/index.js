@@ -1,11 +1,17 @@
+import { LoginPageContainer, LoginPageTitle } from "./styles";
+import LoginPageForm from "./LoginPageForm";
+import { useSelector } from "react-redux";
 
+const LoginPage = () => {
 
-const Login = () => {
+    const authToken = useSelector(state => state.authToken);
+
     return (
-        <div>
-
-        </div>
+        <LoginPageContainer>
+            <LoginPageTitle>{authToken ? 'Logged in': 'Log in'}</LoginPageTitle>
+            {!authToken && <LoginPageForm />}
+        </LoginPageContainer>
     );
 };
 
-export default Login;
+export default LoginPage;

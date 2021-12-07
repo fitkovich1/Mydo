@@ -1,12 +1,12 @@
+import { ShopPageContainer } from "./styles";
 
-
-const Shop = () => {
+const ShopPage = () => {
 
     return (
-        <div>
-
-        </div>
+        <ShopPageContainer>
+            <p>Shop page</p>
+        </ShopPageContainer>
     );
 }
 
-export default Shop;
+export default ShopPage;

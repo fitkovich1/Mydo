@@ -1,21 +1,12 @@
-import styled from "styled-components";
+import { ScannerPageContainer } from "./styles";
 
+const ScannerPage = () => {
 
-const ScanQRCodePageContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 auto;
-`;
-
-
-const ScanQRCodePage = () => {
     return (
-        <ScanQRCodePageContainer>
-            <p>ScanQRCodePage</p>
-        </ScanQRCodePageContainer>
+        <ScannerPageContainer>
+            <p>Scanner page</p>
+        </ScannerPageContainer>
     );
 };
 
-export default ScanQRCodePage;
+export default ScannerPage;

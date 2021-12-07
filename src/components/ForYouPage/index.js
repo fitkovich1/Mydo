@@ -1,11 +1,12 @@
+import { ForYouPageContainer } from "./styles";
 
+const ForYouPage = () => {
 
-const ForYou = () => {
     return (
-        <div>
-
-        </div>
+        <ForYouPageContainer>
+            <p>For you page</p>
+        </ForYouPageContainer>
     );
 };
 
-export default ForYou;
+export default ForYouPage;
